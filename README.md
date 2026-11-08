@@ -10,6 +10,8 @@ ingredients you have and get matched to dishes you can cook right now.
 - 🧺 *Kisa m ka kwit?* — ingredient-based dish matching with synonym support
   (English and Kreyòl ingredient names both work)
 - ✏️ Add your own dishes or edit the built-in ones, right in the app
+- 📤 Share any recipe as a branded recipe card image — straight to Messenger,
+  Mail, WhatsApp, etc. via your phone's share sheet, or email/download/copy it
 - 📱 Installable on iPhone/Android via "Add to Home Screen," works offline
 
 **Running it**

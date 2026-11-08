@@ -749,3 +749,49 @@ footer p {
     padding: 6px 12px;
   }
 }
+
+/* ---------- Share recipe card ---------- */
+.share-modal {
+  z-index: 110;
+}
+
+.share-card h2 {
+  margin: 0 0 4px;
+  color: var(--haiti-blue);
+}
+
+.share-preview {
+  margin: 14px 0;
+  max-height: 46vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 2px solid #e3e0d6;
+  background: #fff;
+}
+
+.share-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.share-status {
+  min-height: 1.4em;
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: var(--leaf);
+}
+
+.share-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 560px) {
+  .share-actions > button {
+    flex: 1 1 calc(50% - 10px);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
