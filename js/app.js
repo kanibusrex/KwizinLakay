@@ -236,12 +236,14 @@ function openRecipe(recipe) {
       ${recipe.steps.map((s) => `<li>${s}</li>`).join("")}
     </ol>
     <div class="modal-actions">
+      <button class="btn-primary" id="modal-share-btn">📤 Share recipe card</button>
       <button class="btn-secondary" id="modal-edit-btn">✏️ Edit this dish</button>
       ${isCustomRecipe(recipe.id) ? `<button class="btn-danger" id="modal-delete-btn">🗑 Delete</button>` : ""}
       ${overrides[recipe.id] ? `<button class="btn-ghost" id="modal-restore-btn">↩️ Restore original</button>` : ""}
     </div>
   `;
 
+  document.getElementById("modal-share-btn").addEventListener("click", () => openSharePanel(recipe));
   document.getElementById("modal-edit-btn").addEventListener("click", () => {
     closeModal();
     openEditor(recipe);
@@ -280,6 +282,7 @@ function refreshAllViews() {
 }
 
 function closeModal() {
+  closeSharePanel();
   modal.classList.add("hidden");
   document.body.style.overflow = "";
 }
@@ -287,8 +290,14 @@ modalClose.addEventListener("click", closeModal);
 modal.addEventListener("click", (e) => {
   if (e.target === modal) closeModal();
 });
+document.getElementById("share-panel").addEventListener("click", (e) => {
+  if (e.target.id === "share-panel") closeSharePanel();
+});
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeModal();
+  if (e.key !== "Escape") return;
+  const sharePanel = document.getElementById("share-panel");
+  if (!sharePanel.classList.contains("hidden")) closeSharePanel();
+  else closeModal();
 });
 
 // ---------- Pantry / matching ----------

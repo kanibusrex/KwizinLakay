@@ -1,12 +1,13 @@
 // Network-first service worker: always try for fresh files, fall back to
 // the cache when offline so the app keeps working without a connection.
-const CACHE = "kwizin-lakay-v1";
+const CACHE = "kwizin-lakay-v2";
 const ASSETS = [
   "./",
   "./index.html",
   "./css/styles.css",
   "./js/recipes-data.js",
   "./js/app.js",
+  "./js/share-card.js",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
